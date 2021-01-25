@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Social Media Dashboard</title>
+  </head>
+  <body class="dark">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+  <script>
+    const circle = document.querySelector(".header__toggle-switch-circle");
+    const button = document.querySelector(".header__toggle-switch-wrapper");
+    let prefferedTheme = localStorage.getItem("theme");
+    let currentTheme = document.body.classList[0];
+    console.log(currentTheme);
+
+    if (prefferedTheme) {
+      if (prefferedTheme === "light") {
+        circle.style.transform = `translateX(25px)`;
+      }
+      document.body.classList.replace(currentTheme, prefferedTheme);
+    }
+
+    button.addEventListener("click", function () {
+      circle.style.transition = "transform 0.5s";
+      const isTransformApplied = getComputedStyle(circle).transform;
+      if (isTransformApplied === "none") {
+        circle.style.transform = `translateX(25px)`;
+        document.body.classList.replace("dark", "light");
+        localStorage.setItem("theme", "light");
+      } else {
+        circle.style.transform = `none`;
+        document.body.classList.replace("light", "dark");
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  </script>
+</html>
