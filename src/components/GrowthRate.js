@@ -3,7 +3,6 @@ function GrowthRate(props) {
   const arrowDown = (
     <path fill="#DC414C" fillRule="evenodd" d="M0 0l4 4 4-4z" />
   );
-  console.log(props.unit);
   return (
     <div className={"stats " + (props.unit ? "stats--positioned" : "")}>
       <svg xmlns="http://www.w3.org/2000/svg" width="8" height="4">

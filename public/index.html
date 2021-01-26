@@ -21,15 +21,12 @@
     const button = document.querySelector(".header__toggle-switch-wrapper");
     let prefferedTheme = localStorage.getItem("theme");
     let currentTheme = document.body.classList[0];
-    console.log(currentTheme);
-
     if (prefferedTheme) {
       if (prefferedTheme === "light") {
         circle.style.transform = `translateX(25px)`;
       }
       document.body.classList.replace(currentTheme, prefferedTheme);
     }
-
     button.addEventListener("click", function () {
       circle.style.transition = "transform 0.5s";
       const isTransformApplied = getComputedStyle(circle).transform;
