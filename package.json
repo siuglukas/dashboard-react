@@ -1,5 +1,6 @@
 {
-  "name": "social-dashboard",
+  "name": "dashboard-react",
+  "homepage": "https://siuglukas.github.io/dashboard-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,7 +13,6 @@
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
-  "homepage": "https://siuglukas.github.io/social-media-dashboard",
   "scripts": {
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
